@@ -1,0 +1,56 @@
+{
+    "cards": [
+        {
+            "id": 0,
+            "title": "Card 1",
+            "background_image": "assets/imgs/room.jpg",
+            "overlay_info": ["Information 1", "Additional Info 1"],
+            "modal_content": {
+                "buttons": ["Button 1", "Button 2"],
+                "dropdowns": [{"options": ["Option 1", "Option 2", "Option 3"], "default": "Option 1"}],
+                "radio_buttons": [{"options": ["Radio 1", "Radio 2", "Radio 3"], "default": "Radio 1"}],
+                "sliders": [{"min": 0, "max": 10, "step": 1, "default": 5}],
+                "iframes": ["https://www.example.com", "https://www.example2.com"]
+            }
+        },
+        {
+            "id": 1,
+            "title": "Card 2",
+            "background_image": "assets/imgs/room.jpg",
+            "overlay_info": ["info1", "info2", "info3"],
+            "modal_content": {
+                "buttons": [],
+                "dropdowns": [],
+                "radio_buttons": [],
+                "sliders": [],
+                "iframes": []
+            }
+        },
+        {
+            "id": 2,
+            "title": "Card 3",
+            "background_image": "assets/imgs/room.jpg",
+            "overlay_info": [],
+            "modal_content": {
+                "buttons": ["Button 1", "Button 2"],
+                "dropdowns": [{"options": ["Option 1", "Option 2", "Option 3"], "default": "Option 1"}],
+                "radio_buttons": [{"options": ["Radio 1", "Radio 2", "Radio 3"], "default": "Radio 1"}],
+                "sliders": [{"min": 0, "max": 10, "step": 1, "default": 5}],
+                "iframes": ["https://www.example.com"]
+            }
+        },
+        {
+            "id": 3,
+            "title": "Card 4",
+            "background_image": "assets/imgs/room.jpg",
+            "overlay_info": ["Anwesenheit:\n anwesend", "Temperatur:\n 20 °C", "Luftfeuchtigkeit:\n 50 %H", "CO2: \n 800 ppm"],
+            "modal_content": {
+                "buttons": ["Button 1"],
+                "dropdowns": [{"options": ["Option 1", "Option 2", "Option 3"], "default": "Option 1"}],
+                "radio_buttons": [],
+                "sliders": [],
+                "iframes": ["https://www.example.com", "https://www.example3.com"]
+            }
+        }
+    ]
+}

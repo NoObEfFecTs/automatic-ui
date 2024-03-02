@@ -1,0 +1,121 @@
+/* styles.css */
+
+:root {
+    --card-height: 600px; /* Define a CSS variable for card height */
+    --card-width: 550px;
+    --row-height: 100px;
+}
+
+/* Existing styles */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #050505;
+}
+
+h1 {
+    color: #007bff;
+}
+
+.card {
+    margin-bottom: 20px;
+    /* height: var(--card-height); */
+    width: var(--card-width);
+    background-color: #5e5e5e;
+}
+
+.card-img {
+    opacity: 80%;
+    background-color: white;
+}
+
+.card-img-overlay {
+    background: rgba(0, 0, 0, 0.5);
+    color: #fff;
+}
+
+.card-title {
+    font-size: 1.5em;
+    color: white;
+}
+
+.card-text {
+    font-size: 1.2em;
+}
+
+
+.card-title-row {
+    width: 100%;
+    text-align: left;
+    /* height: var(--row-height)*1.2; */
+    padding: 10px;
+}
+
+.card-info-row {
+    width: 100%;
+    padding: 10px;
+    justify-content: left;
+}
+
+.card-info-col {
+    width: 10%;
+    text-align: center;
+    padding: 10px;
+    font-size: smaller;
+    color: white;
+}
+
+.card-button-row {
+    width: 100%;
+    /* height: var(--row-height); */
+    padding: 10px;
+}
+
+/* Additional styles for the grid layout */
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 15px;
+    justify-content: center; /* Align cards to the center horizontally */
+}
+
+.col {
+    flex: 0 0 100%;
+    /* padding: 15px; */
+    /* height: var(--card-height); */
+}
+
+@media (min-width: 500px) {
+    .col {
+        flex: 0 0 50%;
+    }
+}
+
+@media (min-width: var(--card-width*3)) {
+    .col {
+        flex: 0 0 33.33%;
+        justify-content: left;
+    }
+}
+
+@media (min-width: 2300px) {
+    .col {
+        flex: 0 0 25%;
+    }
+}
+
+/* New styles for modal size */
+.modal-xl {
+    max-width: 90%;
+}
+
+.modal-lg {
+    max-width: 75%;
+}
+
+.modal-md {
+    max-width: 60%;
+}
+
+.modal-sm {
+    max-width: 50%;
+}
