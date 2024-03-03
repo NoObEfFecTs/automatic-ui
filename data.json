@@ -2,54 +2,41 @@
     "cards": [
         {
             "id": 0,
-            "title": "Card 1",
+            "title": "Wohnzimmer",
             "background_image": "assets/imgs/room.jpg",
-            "overlay_info": ["Information 1", "Additional Info 1"],
+            "overlay_info": [
+                {
+                    "title" : "CO2", "content" : "500", 
+                    "unit" : "ppm", 
+                    "topic" : "Wohnzimmer/esp_wohnzimmer1/sensor/mhz19b_co2/state"
+                },
+                {
+                    "title" : "Temperatur", "content" : "500", 
+                    "unit" : "°C", 
+                    "topic" : "Wohnzimmer/esp_wohnzimmer1/sensor/bme280_temp/state"
+                },
+                {
+                    "title" : "Helligkeit", "content" : "500", 
+                    "unit" : "lux", 
+                    "topic" : "Wohnzimmer/esp_wohnzimmer1/sensor/bme280_hum/state"
+                },
+                {
+                    "title" : "Lufttdruck", "content" : "500", 
+                    "unit" : "mbar", 
+                    "topic" : "Wohnzimmer/esp_wohnzimmer1/sensor/bme280_press/state"
+                },
+                {
+                    "title" : "Luftfeuchte", "content" : "500", 
+                    "unit" : "%Hum", 
+                    "topic" : "Wohnzimmer/esp_wohnzimmer1/sensor/bme280_hum/state"
+                }
+            ],
             "modal_content": {
                 "buttons": ["Button 1", "Button 2"],
                 "dropdowns": [{"options": ["Option 1", "Option 2", "Option 3"], "default": "Option 1"}],
                 "radio_buttons": [{"options": ["Radio 1", "Radio 2", "Radio 3"], "default": "Radio 1"}],
                 "sliders": [{"min": 0, "max": 10, "step": 1, "default": 5}],
-                "iframes": ["https://www.example.com", "https://www.example2.com"]
-            }
-        },
-        {
-            "id": 1,
-            "title": "Card 2",
-            "background_image": "assets/imgs/room.jpg",
-            "overlay_info": ["info1", "info2", "info3"],
-            "modal_content": {
-                "buttons": [],
-                "dropdowns": [],
-                "radio_buttons": [],
-                "sliders": [],
-                "iframes": []
-            }
-        },
-        {
-            "id": 2,
-            "title": "Card 3",
-            "background_image": "assets/imgs/room.jpg",
-            "overlay_info": [],
-            "modal_content": {
-                "buttons": ["Button 1", "Button 2"],
-                "dropdowns": [{"options": ["Option 1", "Option 2", "Option 3"], "default": "Option 1"}],
-                "radio_buttons": [{"options": ["Radio 1", "Radio 2", "Radio 3"], "default": "Radio 1"}],
-                "sliders": [{"min": 0, "max": 10, "step": 1, "default": 5}],
-                "iframes": ["https://www.example.com"]
-            }
-        },
-        {
-            "id": 3,
-            "title": "Card 4",
-            "background_image": "assets/imgs/room.jpg",
-            "overlay_info": ["Anwesenheit:\n anwesend", "Temperatur:\n 20 °C", "Luftfeuchtigkeit:\n 50 %H", "CO2: \n 800 ppm"],
-            "modal_content": {
-                "buttons": ["Button 1"],
-                "dropdowns": [{"options": ["Option 1", "Option 2", "Option 3"], "default": "Option 1"}],
-                "radio_buttons": [],
-                "sliders": [],
-                "iframes": ["https://www.example.com", "https://www.example3.com"]
+                "iframes": ["http://iobrokerpi:3000/d/DbyP3xcVz/sensoren?orgId=1&refresh=1m&viewPanel=4"]
             }
         }
     ]
