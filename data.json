@@ -1,10 +1,32 @@
 {
+    "title" : "Smart Home Dashboard",
+    "mqtt" : {
+        "broker" : "iobrokerpi",
+        "port" : 1883,
+        "user" : "pi",
+        "password" : "raspberry"
+    },
+    "main_info" : [
+        {
+            "title" : "Uhrzeit", 
+            "content" : "%H:%M"
+        },
+        {
+            "title" : "Anwesenheit", 
+            "content" : "anwesend", 
+            "topic" : "Anwesenheit/Daniel/binary_sensor/presence_daniel/state"
+        }
+    ],
     "cards": [
         {
             "id": 0,
             "title": "Wohnzimmer",
             "background_image": "assets/imgs/room.jpg",
             "overlay_info": [
+                {
+                    "title" : "Anwesenheit", "content" : "500", 
+                    "topic" : "Anwesenheit/Daniel/binary_sensor/presence_daniel/state"
+                },
                 {
                     "title" : "CO2", "content" : "500", 
                     "unit" : "ppm", 
@@ -21,7 +43,7 @@
                     "topic" : "Wohnzimmer/esp_wohnzimmer1/sensor/bme280_hum/state"
                 },
                 {
-                    "title" : "Lufttdruck", "content" : "500", 
+                    "title" : "Luftdruck", "content" : "500", 
                     "unit" : "mbar", 
                     "topic" : "Wohnzimmer/esp_wohnzimmer1/sensor/bme280_press/state"
                 },
@@ -32,9 +54,94 @@
                 }
             ],
             "modal_content": {
-                "buttons": ["Button 1", "Button 2"],
-                "dropdowns": [{"options": ["Option 1", "Option 2", "Option 3"], "default": "Option 1"}],
-                "radio_buttons": [{"options": ["Radio 1", "Radio 2", "Radio 3"], "default": "Radio 1"}],
+                "buttons": [
+                    {
+                        "title" : "Licht an",
+                        "icon" : "fas fa-lightbulb",
+                        "width" : 20,
+                        "active_color" : "red", 
+                        "cmd_topic" : "Test/Licht/cmd",
+                        "state_topic" : "Test/Licht/state"
+                    },
+                    {
+                        "title" : "Licht aus",
+                        "width" : 20,
+                        "icon" : "mdi LineMdLightbulbFilled",
+                        "active_color" : "green", 
+                        "cmd_topic" : "Test/Licht1/cmd",
+                        "state_topic" : "Test/Licht1/state"
+                    }
+                ],
+                "sliders": [{"min": 0, "max": 10, "step": 1, "default": 5}],
+                "iframes": ["http://iobrokerpi:3000/d/DbyP3xcVz/sensoren?orgId=1&refresh=1m&viewPanel=4"]
+            }
+        },
+        {
+            "id": 1,
+            "title": "Schlafzimmer",
+            "background_image": "assets/imgs/room.jpg",
+            "overlay_info": [
+                {
+                    "title" : "Anwesenheit", "content" : "500", 
+                    "topic" : "Anwesenheit/Daniel/binary_sensor/presence_daniel/state"
+                },
+                {
+                    "title" : "CO2", "content" : "500", 
+                    "unit" : "ppm", 
+                    "topic" : "Schlafzimmer/esp_schlafzimmer2/sensor/mhz19b_co2/state"
+                },
+                {
+                    "title" : "Temperatur", "content" : "500", 
+                    "unit" : "°C", 
+                    "topic" : "Schlafzimmer/esp_schlafzimmer2/sensor/bme280_temp/state"
+                },
+                {
+                    "title" : "Helligkeit", "content" : "500", 
+                    "unit" : "lux", 
+                    "topic" : "Schlafzimmer/esp_schlafzimmer2/sensor/bme280_hum/state"
+                },
+                {
+                    "title" : "Luftdruck", "content" : "500", 
+                    "unit" : "mbar", 
+                    "topic" : "Schlafzimmer/esp_schlafzimmer2/sensor/bme280_press/state"
+                },
+                {
+                    "title" : "Luftfeuchte", "content" : "500", 
+                    "unit" : "%Hum", 
+                    "topic" : "Schlafzimmer/esp_schlafzimmer2/sensor/bme280_hum/state"
+                }
+            ],
+            "modal_content": {
+                "sliders": [{"min": 0, "max": 10, "step": 1, "default": 5}],
+                "iframes": ["http://iobrokerpi:3000/d/DbyP3xcVz/sensoren?orgId=1&refresh=1m&viewPanel=4"]
+            }
+        },
+        {
+            "id": 2,
+            "title": "Küche",
+            "background_image": "assets/imgs/room.jpg",
+            "overlay_info": [
+                {
+                    "title" : "Anwesenheit", "content" : "ON",
+                    "topic" : "Küche/esp_kueche1/binary_sensor/bewegung/state"
+                }
+            ],
+            "modal_content": {
+                "sliders": [{"min": 0, "max": 10, "step": 1, "default": 5}],
+                "iframes": ["http://iobrokerpi:3000/d/DbyP3xcVz/sensoren?orgId=1&refresh=1m&viewPanel=4"]
+            }
+        },
+        {
+            "id": 3,
+            "title": "Bad",
+            "background_image": "assets/imgs/room.jpg",
+            "overlay_info": [
+                {
+                    "title" : "Anwesenheit", "content" : "ON",
+                    "topic" : "Badezimmer/Licht/binary_sensor/bewegung/state"
+                }
+            ],
+            "modal_content": {
                 "sliders": [{"min": 0, "max": 10, "step": 1, "default": 5}],
                 "iframes": ["http://iobrokerpi:3000/d/DbyP3xcVz/sensoren?orgId=1&refresh=1m&viewPanel=4"]
             }

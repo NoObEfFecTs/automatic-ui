@@ -19,6 +19,10 @@ body {
     white-space: nowrap;
 }
 
+.main-info-row {
+    background: grey;
+}
+
 h1 {
     color: #007bff;
 }
@@ -112,6 +116,22 @@ h1 {
     /* height: var(--card-height); */
 }
 
+.md-r {
+    width : 100%
+}
+
+.md-c {
+    width : 100%
+}
+
+.btn-on {
+    color : greenyellow
+}
+
+.btn-off {
+    color: grey
+}
+
 @media (max-width: 350px) {
     .col {
         flex: 0 0 100%;
@@ -127,7 +147,7 @@ h1 {
 @media (max-width: 1100px) {
     .col {
         flex: 0 0 33.33%;
-        justify-content: left;
+        /* justify-content: left; */
     }
 }
 
@@ -145,7 +165,7 @@ h1 {
 
 /* New styles for modal size */
 .modal-xl {
-    max-width: 90%;
+    max-width: 100%;
 }
 
 .modal-lg {
